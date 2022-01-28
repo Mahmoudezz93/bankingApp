@@ -79,7 +79,7 @@ export const TabNavigator = () => {
                     if (route.name === 'tab1') {
                         iconName = focused ? 'home' : 'home';
                     } else if (route.name === 'tab2') {
-                        iconName = focused ? 'list' : 'list';
+                        iconName = focused ? 'heart' : 'heart';
                     }
                     else if (route.name === 'tab3') {
                         iconName = focused ? 'clock-o' : 'clock-o';
@@ -90,8 +90,8 @@ export const TabNavigator = () => {
                     return <Icon name={iconName} size={size} color={color} />;
                 },
                 headerShown: false,
-                tabBarActiveTintColor: '#8e7321',                   // icon color when active
-                tabBarInactiveTintColor: 'dark',
+                tabBarActiveTintColor: 'pink',                   // icon color when active
+                tabBarInactiveTintColor: 'darkgrey',
                 tabBarStyle: {
                     backgroundColor: 'white',
                     borderTopColor: 'transparent'

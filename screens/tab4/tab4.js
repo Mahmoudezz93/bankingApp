@@ -6,7 +6,7 @@ import { View, Text, TextInput, Button, StyleSheet } from 'react-native'
 export default function tab1 (props)  {     
         return (
             <View style={{flex:1,alignContent:'center',justifyContent:'center'}}>
-                <Text>Welcome To News App, this is tab 4 </Text>
+                <Text style={{textAlign:'center'}}>Welcome To Banking App, this is tab 4</Text>
             </View>
         )
 }

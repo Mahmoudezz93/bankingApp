@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image, Dimensions, ScrollView, TouchableWithoutFeedback } from 'react-native'
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import axios from "axios";
 const Banking = [
     {
@@ -131,10 +133,12 @@ export default class tab1 extends Component {
     render() {
         return (
             this.state.isReady ?
-                <ScrollView padder  style={{ flex: 1, alignContent: 'center' , backgroundColor: 'white' }}>
+                <ScrollView padder  style={{ flex: 1, alignContent: 'center' , backgroundColor: '#eeeee' }}>
 
-                    <View style={{justifyContent:"space-between",padding:10}}>
-                        <Text style={Pagestyles.mainText,{width:100,height:30,backgroundColor:'orange',textAlign:'center',textAlignVertical:'center',color:'white',borderRadius:8}}>Giza, Egypt</Text>
+                    <View style={{flexDirection:'row',justifyContent:"space-between",padding:10,justifyContent:'space-between',paddingHorizontal:10,marginTop:10}}>
+                        <Text style={Pagestyles.mainText,{width:100,height:35,backgroundColor:'orange',textAlign:'center',textAlignVertical:'center',color:'white',borderRadius:8}}>Giza, Egypt</Text>
+
+                        <Icon name={"search"} size={18} color={"orange"} style={{width:35,height:35,backgroundColor:'white',textAlign:'center',textAlignVertical:'center',borderRadius:7,marginEnd:10}} />
                     </View>
 
                     <View style={{ borderBottomWidth: 1, borderColor: '#ededed', marginBottom: 5 }} >
@@ -183,6 +187,26 @@ export default class tab1 extends Component {
                         <ScrollView showsHorizontalScrollIndicator={false} style={{padding:10}} horizontal>
                             {Govern ?
                                 Govern.map((value, index) => {
+                                    return (
+
+                                        <TouchableWithoutFeedback
+                                        >
+                                            <View style={[Pagestyles.container, { backgroundColor: value.color, }]}>
+                                                <Text style={{textAlign:'center'}}>{value.title}</Text>
+                                            </View>
+                                        </TouchableWithoutFeedback>
+                                    )
+                                })
+
+                                : null}
+                        </ScrollView>
+                    </View>
+
+                    <View style={{ borderBottomWidth: 1, borderColor: '#ededed', marginBottom: 5 }} >
+                        <Text style={[Pagestyles.mainText, { alignSelf: 'flex-start',padding:5 }]}>Telecom Co.</Text>
+                        <ScrollView showsHorizontalScrollIndicator={false} style={{padding:10}} horizontal>
+                            {Telecom ?
+                                Telecom.map((value, index) => {
                                     return (
 
                                         <TouchableWithoutFeedback
